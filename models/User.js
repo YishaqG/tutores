@@ -7,6 +7,8 @@ var Schema = mongoose.Schema;
 var UserSchema = new Schema({
   username: {type: String, unique: true, require: true},
   name: {type: String, required: true},
+  email: String,
+  startDate: { type: Date, default: Date.now() },
   _student: {type: Schema.Types.ObjectId, ref: 'Student'},
   _teacher: {type: Schema.Types.ObjectId, ref: 'Teacher'},
   _admin: {type: Boolean, default: false}
